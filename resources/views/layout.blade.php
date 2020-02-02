@@ -35,6 +35,7 @@
                     <a class="dropdown-item" href="{{ route('groups.index') }}">Manage Groups</a>
                     <a class="dropdown-item" href="{{ route('meal-types.index') }}">Manage Meal Type</a>
                     <a class="dropdown-item" href="{{ route('meals.index') }}">Manage Meal</a>
+                    <a class="dropdown-item" href="{{ route('meals.with-comment') }}">Meals with comment</a>
                 </div>
             </li>
         </ul>

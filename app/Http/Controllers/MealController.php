@@ -116,4 +116,14 @@ class MealController extends Controller
         return redirect()->route('meals.index')
             ->with('success','Meal deleted successfully');
     }
+
+    public function withComment()
+    {
+        $mealTypes = MealType::has('meals')->with(['meals' => function($q) {
+            $q->whereNotNull('comment');
+        }])->orderBy('order')->get();
+
+        return view('meals.with-comment', compact('mealTypes'));
+
+    }
 }
