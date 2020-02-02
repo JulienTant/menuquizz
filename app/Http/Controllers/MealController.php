@@ -119,7 +119,9 @@ class MealController extends Controller
 
     public function withComment()
     {
-        $mealTypes = MealType::has('meals')->with(['meals' => function($q) {
+        $mealTypes = MealType::whereHas('meals', function ($q) {
+            $q->whereNotNull('comment');
+        })->with(['meals' => function ($q) {
             $q->whereNotNull('comment');
         }])->orderBy('order')->get();
 

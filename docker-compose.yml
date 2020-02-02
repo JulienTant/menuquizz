@@ -19,7 +19,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - .:/var/www/html
+      - .:/var/www/html:cached
 
   npm:
     image: node:alpine
