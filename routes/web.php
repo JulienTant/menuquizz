@@ -20,5 +20,5 @@ Route::resource('meal-types','MealTypeController');
 Route::get('meal-types/{mealType}/swap','MealTypeController@swap')->name('meal-types.swap');
 Route::resource('meals','MealController');
 
-Route::get('quizz', 'Quizzcontroller@index')->name('quizz.index');
-Route::get('quizz/create', 'Quizzcontroller@show')->name('quizz.create');
+Route::get('quizz', 'QuizzController@index')->name('quizz.index');
+Route::get('quizz/create', 'QuizzController@show')->name('quizz.create');
