@@ -15,8 +15,8 @@ class CreateMealsTable extends Migration
     {
         Schema::create('meals', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('group_id');
-            $table->bigInteger('meal_type_id');
+            $table->unsignedBigInteger('group_id');
+            $table->unsignedBigInteger('meal_type_id');
 
             $table->string('name');
             $table->text('content');
