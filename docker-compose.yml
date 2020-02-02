@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  mysql:
+    image: mysql:8
+    ports:
+    - 3306:3306
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: rootpwd
+
+  redis:
+    image: redis:alpine
+
+  web:
+    build:
+      dockerfile: .docker/web/Dockerfile
+      context: .
+    ports:
+      - 80:80
+    volumes:
+      - .:/var/www/html
+
+  npm:
+    image: node:alpine
+    working_dir: /home/node/app
+    volumes:
+      - .:/home/node/app
+    entrypoint: npm
