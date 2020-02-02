@@ -37500,7 +37500,12 @@ var render = function() {
           _vm._v(" "),
           _c("textarea", {
             staticClass: "form-control",
-            attrs: { id: "answer", name: "answer", rows: "10" }
+            attrs: {
+              id: "answer",
+              name: "answer",
+              rows: "10",
+              readonly: _vm.mode == _vm.MODE_ANSWERED
+            }
           }),
           _vm._v(" "),
           _vm.mode == _vm.MODE_ANSWERING
@@ -37524,7 +37529,12 @@ var render = function() {
                   "textarea",
                   {
                     staticClass: "form-control",
-                    attrs: { id: "content", name: "content", rows: "10" }
+                    attrs: {
+                      readonly: "",
+                      id: "content",
+                      name: "content",
+                      rows: "10"
+                    }
                   },
                   [_vm._v(_vm._s(_vm.meal.content))]
                 ),

@@ -4,12 +4,12 @@
 
         <div class="card-body">
             <label for="answer">Type your answer</label>
-            <textarea id="answer" name="answer" class="form-control" rows="10"></textarea>
+            <textarea id="answer" name="answer" class="form-control" rows="10" :readonly="mode == MODE_ANSWERED"></textarea>
             <button class="btn btn-primary" v-if="mode == MODE_ANSWERING" @click="switchToAnswered">Validate
             </button>
             <template v-if="mode == MODE_ANSWERED">
                 <label for="content">Actual content</label>
-                <textarea id="content" name="content" class="form-control" rows="10">{{ meal.content}}</textarea>
+                <textarea readonly id="content" name="content" class="form-control" rows="10">{{ meal.content}}</textarea>
 
                 <template v-if="madeIt == ''">
                     <strong>Did you find the correct answer ?</strong>
