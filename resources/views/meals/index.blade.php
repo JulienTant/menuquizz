@@ -22,7 +22,6 @@
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Actions</th>
             </tr>
@@ -30,7 +29,6 @@
             <tbody>
             @forelse($mealType->meals as $meal)
                 <tr>
-                    <th scope="row">{{ $meal->id }}</th>
                     <td>{{ $meal->name }}</td>
                     <td>
                         <a href="{{ route('meals.edit', [$meal]) }}" class="text-white btn btn-info btn-sm"><i

@@ -15,7 +15,6 @@
     <table class="table">
         <thead>
         <tr>
-            <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Actions</th>
         </tr>
@@ -23,7 +22,6 @@
         <tbody>
         @foreach($groups as $group)
             <tr>
-                <th scope="row">{{ $group->id }}</th>
                 <td>{{ $group->name }}</td>
                 <td>
                     <a href="{{ route('groups.edit', [$group]) }}" class="text-white btn btn-info btn-sm"><i class="fa fa-pencil"></i></a>
